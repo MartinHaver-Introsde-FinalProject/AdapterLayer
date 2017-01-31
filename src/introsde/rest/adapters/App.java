@@ -23,7 +23,7 @@ public class App
             hostname = "localhost";
         }
 
-        URI BASE_URI = new URI(protocol + hostname + port+"introsde/");
+        URI BASE_URI = new URI(protocol + hostname + port);
 
         System.out.println("Starting sdeadapter standalone HTTP server...");
         JdkHttpServerFactory.createHttpServer(BASE_URI, createApp());
