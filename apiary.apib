@@ -1,5 +1,5 @@
 FORMAT: 1A
-HOST: http://polls.apiblueprint.org/
+HOST: https://gentle-anchorage-46419.herokuapp.com/adapter
 
 # Adapter service
 
@@ -7,33 +7,19 @@ Adapter service is a part of IntroSDE final project 2016. It calls external API
 from Forismatic.com and obtains motivational quotes, that are later used by users
 to motivate themselves on their way towards fitness.
 
-## Questions Collection [/questions]
+## Questions Collection [/getQuote]
 
-### List All Questions [GET]
+### Get a quotation [GET]
 
 + Response 200 (application/json)
 
-        [
-            {
-                "question": "Favourite programming language?",
-                "published_at": "2015-08-05T08:40:51.620Z",
-                "choices": [
-                    {
-                        "choice": "Swift",
-                        "votes": 2048
-                    }, {
-                        "choice": "Python",
-                        "votes": 1024
-                    }, {
-                        "choice": "Objective-C",
-                        "votes": 512
-                    }, {
-                        "choice": "Ruby",
-                        "votes": 256
-                    }
-                ]
-            }
-        ]
+        {
+          "quoteText": "Id rather regret the things that I have done than the things that I have not done. ",
+          "senderLink": "",
+          "senderName": "",
+          "quoteLink": "http://forismatic.com/en/f775b71bf9/",
+          "quoteAuthor": "Lucille Ball "
+        }
 
 ### Create a New Question [POST]
 
