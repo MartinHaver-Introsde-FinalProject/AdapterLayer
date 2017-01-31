@@ -7,9 +7,9 @@ Adapter service is a part of IntroSDE final project 2016. It calls external API
 from Forismatic.com and obtains motivational quotes, that are later used by users
 to motivate themselves on their way towards fitness.
 
-## Questions Collection [/getQuote]
+## Obtaining a quotation [/getQuote]
 
-### Get a quotation [GET]
+### getQuote [GET]
 
 + Response 200 (application/json)
 
@@ -20,49 +20,3 @@ to motivate themselves on their way towards fitness.
           "quoteLink": "http://forismatic.com/en/f775b71bf9/",
           "quoteAuthor": "Lucille Ball "
         }
-
-### Create a New Question [POST]
-
-You may create your own question using this action. It takes a JSON
-object containing a question and a collection of answers in the
-form of choices.
-
-+ Request (application/json)
-
-        {
-            "question": "Favourite programming language?",
-            "choices": [
-                "Swift",
-                "Python",
-                "Objective-C",
-                "Ruby"
-            ]
-        }
-
-+ Response 201 (application/json)
-
-    + Headers
-
-            Location: /questions/2
-
-    + Body
-
-            {
-                "question": "Favourite programming language?",
-                "published_at": "2015-08-05T08:40:51.620Z",
-                "choices": [
-                    {
-                        "choice": "Swift",
-                        "votes": 0
-                    }, {
-                        "choice": "Python",
-                        "votes": 0
-                    }, {
-                        "choice": "Objective-C",
-                        "votes": 0
-                    }, {
-                        "choice": "Ruby",
-                        "votes": 0
-                    }
-                ]
-            }
