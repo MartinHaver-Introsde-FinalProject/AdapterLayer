@@ -7,7 +7,12 @@ import java.io.InputStreamReader;
 import javax.ejb.*;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.Context;
+import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Request;
 import javax.ws.rs.core.Response;
+import javax.ws.rs.core.UriInfo;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.client.ClientProtocolException;
@@ -19,11 +24,22 @@ import org.json.*;
 
 
 
-@Stateless // will work only inside a Java EE application
-@LocalBean // will work only inside a Java EE application
+@SuppressWarnings("deprecation")
+@Stateless
+@LocalBean
 @Path("/adapter")
 public class Adapter {
-
+	@Context
+	UriInfo uriInfo;
+	@Context
+	Request request;
+	
+	@GET
+	@Produces({ MediaType.TEXT_HTML, MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
+	public String getInfo() {
+		System.out.println("Getting api information...");
+		return "Hello! This is an adapter service by M.Haver";
+	}
      //Getting a motivation quote from quotesondesign
      @GET
      @Path("/getQuote")
