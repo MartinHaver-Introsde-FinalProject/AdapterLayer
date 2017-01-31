@@ -130,7 +130,7 @@
     	
     	<target name="run">
     			<echo message="Start app at App in ${build.dir}" />
-    			<java classname="App" classpath="${build.dir}" fork="true">
+    			<java classname="introsde.rest.adapters.App" classpath="${build.dir}" fork="true">
     				<arg value="$JAVA_OPTS  -cp" />
     				<classpath>
     					<path location="build" />
